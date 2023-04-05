@@ -17,8 +17,6 @@ devices provided by the Focusrite Scarlett series of audio interfaces.
 %files
 %{_sysconfdir}/modprobe.d/scarlett-mixer.conf
 
-%license add-license-file-here
-
 %changelog
 * Wed Apr 05 2023 Patrick
 - 

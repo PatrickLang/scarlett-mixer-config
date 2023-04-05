@@ -14,6 +14,16 @@ the mixer devices to be initialized. In combination with alsa-scarlett-gui,
 this enables to you configure hardware mixing and routing of the many PCM
 devices provided by the Focusrite Scarlett series of audio interfaces.
 
+
+%build
+cat > scarlett-mixer.conf <<EOF
+# Scarlett 18i8 gen 2
+options snd_usb_audio vid=0x1235 pid=0x8204 device_setup=1
+EOF
+
+%install
+install -m 644 scarlett-mixer.conf %{_sysconfdir}/modprobe.d/scarlett-mixer.conf
+
 %files
 %{_sysconfdir}/modprobe.d/scarlett-mixer.conf
 

@@ -6,7 +6,7 @@ Summary:        Configure snd_usb_audio for Focusrite Scarlett 2nd/3rd gen devic
 License:        MIT
 URL:            https://www.kernel.org
 
-Requires:       kernel >= 5.14.0
+Requires:       kernel >= 5.14.0, kernel-modules-extra
 
 %description
 This sets the options needed in /etc/modprobe.d/scarlett-mixer.conf to enable
@@ -22,7 +22,8 @@ options snd_usb_audio vid=0x1235 pid=0x8204 device_setup=1
 EOF
 
 %install
-install -m 644 scarlett-mixer.conf %{_sysconfdir}/modprobe.d/scarlett-mixer.conf
+mkdir -p %{buildroot}/%{_sysconfdir}/modprobe.d/
+install -m 644 scarlett-mixer.conf %{buildroot}/%{_sysconfdir}/modprobe.d/scarlett-mixer.conf
 
 %files
 %{_sysconfdir}/modprobe.d/scarlett-mixer.conf

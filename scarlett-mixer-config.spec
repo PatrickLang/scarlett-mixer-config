@@ -1,6 +1,6 @@
 Name:           scarlett-mixer-config
 Version:        0.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Configure snd_usb_audio for Focusrite Scarlett 2nd/3rd gen devices
 
 License:        MIT
